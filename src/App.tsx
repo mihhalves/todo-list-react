@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as C from "./App.Styles";
 import { Item } from "./types/Item";
 import { ListItem } from "./Components/ListItem";
+import { AddArea } from "./Components/AddArea";
 
 const App = () => {
   const [list, setList] = useState<Item[]>([
@@ -15,6 +16,7 @@ const App = () => {
         <C.Header>TO-DO List</C.Header>
 
         {/* Area add new TODO */}
+        <AddArea />
 
         {/* Area to print in screen TODO list of items */}
         {list.map((item, index) => {
