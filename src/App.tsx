@@ -10,13 +10,23 @@ const App = () => {
     { id: 1, name: "Buy bread", done: true },
   ]);
 
+  const handleAddTask = (taskName: string) => {
+    let newList = [...list];
+    newList.push({
+      id: list.length + 1,
+      name: taskName,
+      done: false,
+    });
+    setList(newList);
+  };
+
   return (
     <C.Container>
       <C.Area>
         <C.Header>TO-DO List</C.Header>
 
         {/* Area add new TODO */}
-        <AddArea />
+        <AddArea onEnter={handleAddTask} />
 
         {/* Area to print in screen TODO list of items */}
         {list.map((item, index) => {
